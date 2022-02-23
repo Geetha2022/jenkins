@@ -1,22 +1,22 @@
 pipeline {
-agent any
-stages {
-stage ("build") {
-steps {
-echo "building the application"
-    }
+          agent any
+           stages {
+            stage ("build") {
+             steps {
+               echo "building the application"
+                    }
+                  }
+                 satge ("test") {
+                    steps {
+                         echo "test the application"
+                              }
+                           }
+                       stage ("deploy") {
+                        steps {
+                         echo "deploy the application"
+                           }
+                          }
    }
-satge ("test") {
-steps {
-echo "test the application"
-  }
- }
- stage ("deploy") {
- steps {
- echo "deploy the application"
-   }
- }
-}
 }
 
 
