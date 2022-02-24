@@ -1,20 +1,20 @@
----
-execution:
-- concurrency: 50
-  hold-for: 3m
-  ramp-up: 2m
-  
-  scenario: choose flight
-  scenarios:
-  choose flight:
-  requests:
-  -labels: blazedemo
-  method: GET
-  url: http://blazedemo.com/
-  -label: reserve
-  method: post
-  url: http://blazedemo.com/reserve.php
-  body:
-  fromport: paris
-  toport: Buenos Aires
-
+--- 
+execution: 
+  - 
+    ? "-label"
+    : reserve
+    ? "-labels"
+    : blazedemo
+    body: ~
+    ? "choose flight"
+    : ~
+    concurrency: 50
+    fromport: paris
+    hold-for: 3m
+    method: post
+    ramp-up: 2m
+    requests: ~
+    scenario: "choose flight"
+    scenarios: ~
+    toport: "Buenos Aires"
+    url: "http://blazedemo.com/reserve.php"
